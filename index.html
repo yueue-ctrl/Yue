@@ -280,21 +280,40 @@
             text-decoration: underline;
         }
 
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            margin-top: 40px;
+            background-color: var(--ink-color);
+            border: 1px solid var(--ink-color);
+        }
  
         .project-item {
-            border: 1px solid var(--ink-color);
             background: var(--bg-white);
             transition: background 0.2s;
         }
 
         .project-item:hover {
-            background: #f8f8f8;
+            background-image: 
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+            background-size: var(--cell-size) var(--cell-size);
+            background-attachment: fixed;
+            background-position: 30px 20px;
+            background-color: var(--bg-color);
         }
 
         .project-image {
-            height: 300px;
-            background: #f0f0f0;
-            border-bottom: 1px solid var(--ink-color);
+            background: #d9d9d9;
+            aspect-ratio: 16 / 9;
+        }
+
+        .project-image img,
+        .project-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-info {
@@ -457,38 +476,93 @@
             
             <div class="project-grid" vid="62">
                 <div class="project-item">
-                    <div class="project-image"></div>
+                    <div class="project-image">
+                        <img src="images/home/newspart.gif" alt="Apex Financial Terminal">
+                    </div>
                     <div class="project-info">
                         <div class="project-title">Apex Financial Terminal</div>
                         <div class="project-meta">2023 / Fintech</div>
                     </div>
                 </div>
                 <div class="project-item">
-                    <div class="project-image"></div>
+                    <div class="project-image">
+                        <img src="images/home/facesapce.GIF" alt="Mono-Space Gallery">
+                    </div>
                     <div class="project-info">
                         <div class="project-title">Mono-Space Gallery</div>
                         <div class="project-meta">2023 / Culture</div>
                     </div>
                 </div>
                 <div class="project-item">
-                    <div class="project-image"></div>
+                    <div class="project-image">
+                        <img src="images/home/zebba.gif" alt="Structure & Void">
+                    </div>
                     <div class="project-info">
                         <div class="project-title">Structure & Void</div>
                         <div class="project-meta">2022 / Architecture</div>
                     </div>
                 </div>
                 <div class="project-item">
-                    <div class="project-image"></div>
+                    <div class="project-image">
+                        <video src="images/home/list.MP4" autoplay loop muted playsinline></video>
+                    </div>
                     <div class="project-info">
                         <div class="project-title">Grid Systems Intl.</div>
                         <div class="project-meta">2022 / E-Commerce</div>
                     </div>
                 </div>
                 <div class="project-item">
-                    <div class="project-image"></div>
+                    <div class="project-image">
+                        <video src="images/home/punctuation.MP4" autoplay loop muted playsinline></video>
+                    </div>
                     <div class="project-info">
                         <div class="project-title">Null_Pointer Exception</div>
                         <div class="project-meta">2021 / Experimental</div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <video src="images/home/:::.mp4.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-title">:::</div>
+                        <div class="project-meta">2021 / Video Art</div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <video src="images/home/ygd.MOV" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-title">YGD</div>
+                        <div class="project-meta">2020 / Motion</div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <video src="images/home/四.mov" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-title">四</div>
+                        <div class="project-meta">2020 / Installation</div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <video src="images/home/percent.mov" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-title">Percent</div>
+                        <div class="project-meta">2024 / Motion</div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <video src="images/home/mfa.mov" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-title">MFA</div>
+                        <div class="project-meta">2024 / Motion</div>
                     </div>
                 </div>
             </div>
