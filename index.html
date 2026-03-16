@@ -2,7 +2,12 @@
     <meta charset="UTF-8" vid="2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
     <title vid="4">Yue</title>
+    <link rel="icon" href="images/icon.png" type="image/png">
     <style vid="5">
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --bg-color: #e4e4e4;
             --bg-white: #ffffff;
@@ -356,6 +361,27 @@
             cursor: pointer;
         }
 
+        .contact-button {
+            display: inline-block;
+            border: 1px solid var(--ink-color);
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            transition: all 0.2s;
+            color: var(--ink-color);
+            text-decoration: none;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+
+        .contact-button:hover {
+            background: var(--ink-color);
+            color: var(--white);
+        }
+
       
 
         .content-card:nth-of-type(1) > div[style*="gap: 20px"] {
@@ -385,10 +411,10 @@
 
     
     <nav vid="13">
-        <a href="#" class="nav-item" vid="14">Resume [A]</a>
-        <a href="#" class="nav-item" vid="15">Projects [B]</a>
-        <a href="#" class="nav-item" vid="16">Vibe Coding [C]</a>
-        <a href="#" class="nav-item" vid="17">Contact [D]</a>
+        <a href="#resume" class="nav-item" vid="14">Resume [A]</a>
+        <a href="#projects" class="nav-item" vid="15">Projects [B]</a>
+        <a href="#practice" class="nav-item" vid="16">practice [C]</a>
+        <a href="#contact" class="nav-item" vid="17">Contact [D]</a>
     </nav>
 
     
@@ -410,7 +436,7 @@
             </div>
             
             <span class="meta-data boxed" id="yue-box" vid="47">悦</span>
-            <h1 vid="48">Yue Zhou</h1>
+            <h1 id="resume" vid="48">Yue Zhou</h1>
             <h2 vid="49">I am a Creative Visual Designer with an interdisciplinary background, focused on text-driven information design and interactive experiences.</h2>
             <br vid="50">
             <div style="display: flex; gap: 20px;" vid="51">
@@ -427,10 +453,10 @@
 
         
         <div class="content-card" style="margin-left: calc(var(--cell-size) * 12); width: calc(100% - var(--cell-size) * 16);" vid="60">
-            <h1 vid="61">Projects</h1>
+            <h1 id="projects" vid="61">Projects</h1>
             
             <div class="project-grid" vid="62">
-                <div class="project-item"></div>
+                <div class="project-item">
                     <div class="project-image"></div>
                     <div class="project-info">
                         <div class="project-title">Apex Financial Terminal</div>
@@ -470,10 +496,19 @@
 
         
         <div class="content-card" style="max-width: 400px; margin-left: calc(var(--cell-size) * 2);" vid="87">
-             <h1 vid="88">Methodology</h1>
+             <h1 id="practice" vid="88">Practice</h1>
              <p vid="89">Our work is not decorated. It is engineered. We believe the web is a grid, not a canvas. By exposing the underlying logic of the browser, we create interfaces that feel honest, raw, and utilitarian.</p>
              <br vid="90">
-             <p class="u-mono" vid="91">-&gt; READ FULL PROTOCOL</p>
+             <p class="u-mono" vid="91">-&gt; VIEW ALL</p>
+        </div>
+
+        
+        <div class="content-card" style="margin-left: calc(var(--cell-size) * 2);">
+             <h1 id="contact">Contact</h1>
+             <div>
+                <a href="https://www.instagram.com/yue_yueyuez?igsh=MW9saHl1MXptazl4eg%3D%3D&utm_source=qr" target="_blank" class="contact-button">Instagram</a>
+                <a href="https://xhslink.com/m/6KIXvwLhVdM" target="_blank" class="contact-button">Rednote</a>
+             </div>
         </div>
 
     </div>
@@ -589,9 +624,31 @@
         });
 
         
+        document.addEventListener('DOMContentLoaded', () => {
+            generateRulers();
+            generatePixelArt();
+
+            const yueBox = document.getElementById('yue-box');
+            if (yueBox) {
+                let yueGridX = 0;
+                let yueGridY = 0;
+
+                yueBox.addEventListener('click', () => {
+                    const directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+                    const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+
+                    yueGridX += randomDirection[0];
+                    yueGridY += randomDirection[1];
+
+                    const offsetX = yueGridX * cellSize;
+                    const offsetY = yueGridY * cellSize;
+
+                    yueBox.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+                });
+            }
+        });
+
         window.addEventListener('resize', generateRulers);
-        generateRulers();
-        generatePixelArt();
 
     </script>
 
